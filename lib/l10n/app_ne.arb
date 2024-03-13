@@ -1,0 +1,45 @@
+{
+  "@@locale": "ne",
+  "helloWorld": "नमस्ते संसार!",
+  "@helloWorld": {
+    "description": "नेपालीमा नवजात प्रोग्रामरलाई अभिवादन"
+  },
+  "factory": "फैक्टरी",
+  "order": "आदेश",
+  "newOrder": "नयाँ आदेश",
+  "@newOrder": {
+    "description": "नयाँ आदेश शुरू गर्नका लागि पाठ"
+  },
+  "delivery": "डेलिभरी",
+  "@delivery": {
+    "description": "डेलिभरीसँग सम्बन्धित पाठ"
+  },
+  "customer": "ग्राहक",
+  "@customer": {
+    "description": "ग्राहकहरूसँग सम्बन्धित पाठ"
+  },
+  "catalogue": "क्याटालग",
+  "@catalogue": {
+    "description": "उत्पाद क्याटालगहरूसँग सम्बन्धित पाठ"
+  },
+  "profile": "प्रोफाइल",
+  "@profile": {
+    "description": "प्रयोगकर्ता प्रोफाइलसँग सम्बन्धित पाठ"
+  },
+  "days": "दिनहरू",
+  "@days": {
+    "description": "दिनहरूसँग सम्बन्धित पाठ"
+  },
+  "calculator": "क्याल्कुलेटर",
+  "@calculator": {
+    "description": "क्याल्कुलेटरसँग सम्बन्धित पाठ"
+  },
+  "notification": "सूचना",
+  "@notification": {
+    "description": "सूचनासँग सम्बन्धित पाठ"
+  },
+  "menu": "मेनु",
+  "@menu": {
+    "description": "मेनुसँग सम्बन्धित पाठ"
+  }
+}

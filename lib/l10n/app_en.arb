@@ -1,0 +1,44 @@
+{
+  "helloWorld": "Hello World!",
+  "@helloWorld": {
+    "description": "The conventional newborn programmer greeting"
+  },
+  "factory": "Factory",
+  "order": "Order",
+  "newOrder": "New Order",
+  "@newOrder": {
+    "description": "Text for initiating a new order"
+  },
+  "delivery": "Delivery",
+  "@delivery": {
+    "description": "Text related to delivery"
+  },
+  "customer": "Customer",
+  "@customer": {
+    "description": "Text related to customers"
+  },
+  "catalogue": "Catalogue",
+  "@catalogue": {
+    "description": "Text related to product catalogues"
+  },
+  "profile": "Profile",
+  "@profile": {
+    "description": "Text related to user profiles"
+  },
+  "days": "Days",
+  "@days": {
+    "description": "Text related to days"
+  },
+  "calculator": "Calculator",
+  "@calculator": {
+    "description": "Text related to a calculator"
+  },
+  "notification": "Notification",
+  "@notification": {
+    "description": "Text related to notifications"
+  },
+  "menu": "Menu",
+  "@menu": {
+    "description": "Text related to a menu"
+  }
+}
