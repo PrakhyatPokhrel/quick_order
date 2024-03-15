@@ -13,9 +13,3 @@ class AddToCartClickEvent extends HomeProductEvent {
 
   AddToCartClickEvent({required this.addtocart});
 }
-
-class AddToFavouriteClickEvent extends HomeProductEvent {
-  Product addtofavourite;
-
-  AddToFavouriteClickEvent({required this.addtofavourite});
-}

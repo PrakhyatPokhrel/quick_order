@@ -3,9 +3,9 @@ import 'package:quick_order/constant/color.dart';
 
 class CustomTextContainer extends StatelessWidget {
   final String text;
-  final double heightC;
-  final double widthC;
-  final Color color;
+  final double? heightC;
+  final double? widthC;
+  final Color? color;
   const CustomTextContainer({
     super.key,
     required this.text,

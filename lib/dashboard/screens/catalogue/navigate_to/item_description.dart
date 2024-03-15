@@ -3,8 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quick_order/constant/apptheme.dart';
 import 'package:quick_order/constant/color.dart';
 import 'package:quick_order/custom/custom_widget.dart';
-import 'package:quick_order/dashboard/screens/catalogue/navigate_to/cart.dart';
-import 'package:quick_order/dashboard/screens/catalogue/navigate_to/favourite.dart';
+import 'package:quick_order/dashboard/screens/catalogue/navigate_to/cart/cart.dart';
+import 'package:quick_order/dashboard/screens/catalogue/navigate_to/favourites/favourite.dart';
 import 'package:quick_order/dashboard/screens/catalogue/navigate_to/home/bloc/bloc/home_bloc.dart';
 import 'package:quick_order/dashboard/screens/catalogue/navigate_to/home/bloc/bloc/home_event.dart';
 import 'package:quick_order/dashboard/screens/catalogue/navigate_to/home/model/fakestore_product.dart';
@@ -77,9 +77,9 @@ class _ItemDescriptionState extends State<ItemDescription> {
                                 EdgeInsets.fromLTRB(padding, 0, padding, 0),
                             child: GestureDetector(
                                 onTap: () {
-                                  context.read<HomeProductBloc>().add(
-                                      AddToFavouriteClickEvent(
-                                          addtofavourite: clickProducts));
+                                  // context.read<FavouritesBloc>().add(
+                                  //     AddToFavouriteClickEvent(
+                                  //         addtofavourite: clickProducts));
                                   Navigator.push(
                                       context,
                                       MaterialPageRoute(

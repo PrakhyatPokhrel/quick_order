@@ -6,6 +6,7 @@ import 'package:quick_order/constant/color.dart';
 import 'package:quick_order/controller/language_change_controller.dart';
 import 'package:quick_order/custom/custom_widget.dart';
 import 'package:quick_order/dashboard/screens/catalogue/catalogue.dart';
+import 'package:quick_order/registration/sign_in.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -93,14 +94,14 @@ class _HomePageState extends State<HomePage> {
                                 CustomMidContainer(
                                   icon: Icons.abc,
                                   text: "Registration",
-                                  // onTapCallback: () {
-                                  //   Navigator.push(
-                                  //     context,
-                                  //     MaterialPageRoute(
-                                  //       builder: (context) => NewRegistration(),
-                                  //     ),
-                                  //   );
-                                  // },
+                                  onTapCallback: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => SignIn(),
+                                      ),
+                                    );
+                                  },
                                 ),
                                 CustomMidContainer(
                                   icon: Icons.factory_outlined,

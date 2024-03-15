@@ -12,6 +12,7 @@ double sizedboxwidthMid = 20.0;
 double fontSize1 = 16;
 double fontSize2 = 18.0;
 double fontSize3 = 20.0;
+double fontSize4 = 23.0;
 
 class AppTheme {
   static ThemeData theme = ThemeData(

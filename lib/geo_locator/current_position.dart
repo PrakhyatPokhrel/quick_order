@@ -1,4 +1,6 @@
+import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
+import 'package:quick_order/custom/custom_widget.dart';
 
 Future<Position> _determinePosition() async {
   bool serviceEnabled;
@@ -23,7 +25,23 @@ Future<Position> _determinePosition() async {
   return await Geolocator.getCurrentPosition();
 }
 
-
 // Position position = await Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
 
-// Position? position = await Geolocator.getLastKnownPosition();
+// Position? position = await Geolocator.getLastKnownPosition()
+
+class Location extends StatefulWidget {
+  const Location({super.key});
+
+  @override
+  State<Location> createState() => _LocationState();
+}
+
+class _LocationState extends State<Location> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: CustomAppbar(text: "Location", context: context),
+      body: Container(child: Text("")),
+    );
+  }
+}

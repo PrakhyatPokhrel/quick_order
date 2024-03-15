@@ -219,109 +219,112 @@ class _HomePageState extends State<HomePage> {
                       );
                     },
                   ),
-                  BlocConsumer<HomeProductBloc, HomeProductState>(
-                    listener: (context, state) {},
-                    builder: (context, state) {
-                      if (state is LoadingHomeProductState) {
-                        return Container(
-                          height: 20,
-                          width: 100,
-                          alignment: Alignment.center,
-                          child: CircularProgressIndicator(
-                            strokeWidth: 1,
-                          ),
-                        );
-                      }
-                      if (state is SuccessCatalougeState) {
-                        return Container(
-                            child: SingleChildScrollView(
-                                child: Padding(
-                          padding: EdgeInsets.fromLTRB(4, 4, 4, 4),
-                          child: Container(
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(20)),
-                            height: MediaQuery.of(context).size.height * 0.58,
-                            child: GridView.builder(
-                              gridDelegate:
-                                  SliverGridDelegateWithFixedCrossAxisCount(
-                                crossAxisCount: 2,
-                                crossAxisSpacing: 2.0,
-                                mainAxisSpacing: 6.0,
-                              ),
-                              itemCount: state.data.length,
-                              itemBuilder: (BuildContext context, int index) {
-                                return Card(
-                                  color: AppColor.grey[200],
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    children: [
-                                      GestureDetector(
-                                        onTap: () {
-                                          // Navigator.push(
-                                          //     context,
-                                          //     MaterialPageRoute(
-                                          //         builder: (context) =>
-                                          //             ItemDescription()));
-                                        },
-                                        child: Container(
-                                          height: 100,
-                                          decoration: BoxDecoration(
-                                              borderRadius:
-                                                  BorderRadius.circular(20)),
-                                          child: Image(
-                                              fit: BoxFit.fitHeight,
-                                              image: NetworkImage(state
-                                                  .data[index].photoUrl
-                                                  .toString())),
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding:
-                                            EdgeInsets.fromLTRB(3, 0, 4, 0),
-                                        child: CustomText(
-                                            text:
-                                                "Detail of the furniture dhhdh hsh yss hbsb hshhs",
-                                            color: AppColor.darkgrey,
-                                            fontsize: fontSize1),
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsets.fromLTRB(
-                                            3, 0, padding, 1),
-                                        child: Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceBetween,
-                                          children: [
-                                            CustomText(
-                                                text: "Price",
-                                                color: AppColor.grey,
-                                                fontsize: fontSize1),
-                                            // Row(
-                                            //   mainAxisAlignment:
-                                            //       MainAxisAlignment.spaceBetween,
-                                            //   children: [
-                                            //     Icon(Icons
-                                            //         .favorite_outline_rounded),
-                                            //     Icon(Icons.shopping_cart),
-                                            //   ],
-                                            // ),
-                                          ],
-                                        ),
-                                      )
-                                    ],
-                                  ),
-                                );
-                              },
-                            ),
-                          ),
-                        )));
-                      }
-                      return Container(
-                          height: 20,
-                          color: AppColor.grey,
-                          width: 100,
-                          alignment: Alignment.center,
-                          child: Text("Error Loading Data"));
-                    },
+                  // BlocConsumer<HomeProductBloc, HomeProductState>(
+                  //   listener: (context, state) {},
+                  //   builder: (context, state) {
+                  //     if (state is LoadingHomeProductState) {
+                  //       return Container(
+                  //         height: 20,
+                  //         width: 100,
+                  //         alignment: Alignment.center,
+                  //         child: CircularProgressIndicator(
+                  //           strokeWidth: 1,
+                  //         ),
+                  //       );
+                  //     }
+                  //     if (state is SuccessCatalougeState) {
+                  //       return Container(
+                  //           child: SingleChildScrollView(
+                  //               child: Padding(
+                  //         padding: EdgeInsets.fromLTRB(4, 4, 4, 4),
+                  //         child: Container(
+                  //           decoration: BoxDecoration(
+                  //               borderRadius: BorderRadius.circular(20)),
+                  //           height: MediaQuery.of(context).size.height * 0.58,
+                  //           child: GridView.builder(
+                  //             gridDelegate:
+                  //                 SliverGridDelegateWithFixedCrossAxisCount(
+                  //               crossAxisCount: 2,
+                  //               crossAxisSpacing: 2.0,
+                  //               mainAxisSpacing: 6.0,
+                  //             ),
+                  //             itemCount: state.data.length,
+                  //             itemBuilder: (BuildContext context, int index) {
+                  //               return Card(
+                  //                 color: AppColor.grey[200],
+                  //                 child: Column(
+                  //                   mainAxisAlignment: MainAxisAlignment.start,
+                  //                   children: [
+                  //                     GestureDetector(
+                  //                       onTap: () {
+                  //                         // Navigator.push(
+                  //                         //     context,
+                  //                         //     MaterialPageRoute(
+                  //                         //         builder: (context) =>
+                  //                         //             ItemDescription()));
+                  //                       },
+                  //                       child: Container(
+                  //                         height: 100,
+                  //                         decoration: BoxDecoration(
+                  //                             borderRadius:
+                  //                                 BorderRadius.circular(20)),
+                  //                         child: Image(
+                  //                             fit: BoxFit.fitHeight,
+                  //                             image: NetworkImage(state
+                  //                                 .data[index].photoUrl
+                  //                                 .toString())),
+                  //                       ),
+                  //                     ),
+                  //                     Padding(
+                  //                       padding:
+                  //                           EdgeInsets.fromLTRB(3, 0, 4, 0),
+                  //                       child: CustomText(
+                  //                           text:
+                  //                               "Detail of the furniture dhhdh hsh yss hbsb hshhs",
+                  //                           color: AppColor.darkgrey,
+                  //                           fontsize: fontSize1),
+                  //                     ),
+                  //                     Padding(
+                  //                       padding: EdgeInsets.fromLTRB(
+                  //                           3, 0, padding, 1),
+                  //                       child: Row(
+                  //                         mainAxisAlignment:
+                  //                             MainAxisAlignment.spaceBetween,
+                  //                         children: [
+                  //                           CustomText(
+                  //                               text: "Price",
+                  //                               color: AppColor.grey,
+                  //                               fontsize: fontSize1),
+                  //                           // Row(
+                  //                           //   mainAxisAlignment:
+                  //                           //       MainAxisAlignment.spaceBetween,
+                  //                           //   children: [
+                  //                           //     Icon(Icons
+                  //                           //         .favorite_outline_rounded),
+                  //                           //     Icon(Icons.shopping_cart),
+                  //                           //   ],
+                  //                           // ),
+                  //                         ],
+                  //                       ),
+                  //                     )
+                  //                   ],
+                  //                 ),
+                  //               );
+                  //             },
+                  //           ),
+                  //         ),
+                  //       )));
+                  //     }
+                  //     return Container(
+                  //         height: 20,
+                  //         color: AppColor.grey,
+                  //         width: 100,
+                  //         alignment: Alignment.center,
+                  //         child: Text("Error Loading Data"));
+                  //   },
+                  // ),
+                  Container(
+                    child: CustomSingleChildGridView(),
                   ),
                   Container(
                     child: CustomSingleChildGridView(),

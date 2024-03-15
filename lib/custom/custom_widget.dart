@@ -157,11 +157,13 @@ class CustomText extends StatelessWidget {
   final String text;
   final Color color;
   final double fontsize;
+  final FontWeight? fontWeight;
 
   const CustomText(
       {super.key,
       required this.text,
       required this.color,
+      this.fontWeight,
       required this.fontsize});
 
   @override
@@ -171,7 +173,52 @@ class CustomText extends StatelessWidget {
       maxLines: 1,
       softWrap: false,
       style: TextStyle(
-          color: color, fontWeight: FontWeight.w500, fontSize: fontsize),
+          color: color,
+          fontWeight: fontWeight ?? FontWeight.w100,
+          fontSize: fontsize),
+    );
+  }
+}
+
+class CustomTextFormField extends StatelessWidget {
+  const CustomTextFormField({
+    super.key,
+    required this.textEditingController,
+    this.hinttext,
+    this.labeltext,
+    this.iconData,
+    required this.borderColor,
+    this.obscuretext,
+  });
+
+  final TextEditingController textEditingController;
+  final String? hinttext;
+  final String? labeltext;
+  final IconData? iconData;
+  final Color borderColor;
+  final bool? obscuretext;
+
+  @override
+  Widget build(BuildContext context) {
+    return TextFormField(
+      // validator: (value){
+      //   // if(password.text.isNotEmpty&&password.text.contains(l)){ }
+      // },
+      controller: textEditingController,
+      textCapitalization: TextCapitalization.sentences,
+      decoration: InputDecoration(
+        border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(
+              10,
+            ),
+            borderSide: BorderSide(color: borderColor)),
+        hintText: hinttext,
+        labelText: labeltext,
+        suffixIcon: GestureDetector(
+          onTap: () {},
+          child: Icon(iconData),
+        ),
+      ),
     );
   }
 }

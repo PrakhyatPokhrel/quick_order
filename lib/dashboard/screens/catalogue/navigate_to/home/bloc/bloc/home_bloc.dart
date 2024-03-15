@@ -16,8 +16,6 @@ class HomeProductBloc extends Bloc<HomeProductEvent, HomeProductState> {
     // on<FetchApiCatalogueEvent>(
     //     (event, emit) => fetchApiCatalogueEvent(event, emit));
     on<AddToCartClickEvent>((event, emit) => addToCartClickEvent(event, emit));
-    on<AddToFavouriteClickEvent>(
-        (event, emit) => addToFavouriteClickEvent(event, emit));
   }
 
   fetchApIEvent(FetchApIEvent event, Emitter<HomeProductState> emit) async {
@@ -45,8 +43,8 @@ class HomeProductBloc extends Bloc<HomeProductEvent, HomeProductState> {
     receiveCartProduct.add(event.addtocart);
   }
 
-  addToFavouriteClickEvent(
-      AddToFavouriteClickEvent event, Emitter<HomeProductState> emit) {
-    receiveFavouriteProducts.add(event.addtofavourite);
-  }
+  // addToFavouriteClickEvent(
+  //     AddToFavouriteClickEvent event, Emitter<HomeProductState> emit) {
+  //   receiveFavouriteProducts.add(event.addtofavourite);
+  // }
 }

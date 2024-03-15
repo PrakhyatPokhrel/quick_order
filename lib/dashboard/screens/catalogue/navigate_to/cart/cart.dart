@@ -17,7 +17,7 @@ class _CartState extends State<Cart> {
     return Scaffold(
       body: Container(
         color: AppColor.background,
-        child: (context.read<HomeProductBloc>().receiveCartProduct.length == 0)
+        child: (context.read<HomeProductBloc>().receiveCartProduct.isEmpty)
             ? Container(
                 child: Text("Your cart is empty."),
               )
@@ -63,7 +63,7 @@ class _CartState extends State<Cart> {
                                         Padding(
                                           padding: const EdgeInsets.all(8.0),
                                           child: Text(
-                                            "Cart Added Items",
+                                            "",
                                             style: TextStyle(
                                                 color: AppColor.darkgrey),
                                           ),

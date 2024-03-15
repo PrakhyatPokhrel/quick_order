@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:quick_order/constant/apptheme.dart';
 import 'package:quick_order/constant/color.dart';
-import 'package:quick_order/dashboard/screens/catalogue/navigate_to/cart.dart';
-import 'package:quick_order/dashboard/screens/catalogue/navigate_to/favourite.dart';
+import 'package:quick_order/dashboard/screens/catalogue/navigate_to/cart/cart.dart';
+import 'package:quick_order/dashboard/screens/catalogue/navigate_to/favourites/favourite.dart';
 import 'package:quick_order/dashboard/screens/catalogue/navigate_to/home/home.dart';
 import 'package:quick_order/dashboard/screens/catalogue/navigate_to/notifications.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
