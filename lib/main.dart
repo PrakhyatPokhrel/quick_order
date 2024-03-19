@@ -10,10 +10,10 @@ import 'package:khalti_flutter/khalti_flutter.dart';
 import 'package:provider/provider.dart';
 import 'package:quick_order/constant/apptheme.dart';
 import 'package:quick_order/controller/language_change_controller.dart';
-import 'package:quick_order/dashboard/dashboard.dart';
 import 'package:quick_order/dashboard/screens/catalogue/bloc/bloc/catalogue_bloc.dart';
 import 'package:quick_order/dashboard/screens/catalogue/navigate_to/home/bloc/bloc/home_bloc.dart';
 import 'package:quick_order/firebase_options.dart';
+import 'package:quick_order/role.dart';
 import 'package:rxdart/rxdart.dart';
 
 final _messageStreamController = BehaviorSubject<RemoteMessage>();
@@ -118,7 +118,7 @@ class _MyAppState extends State<MyApp> {
               Locale('en'), // English
               Locale('ne'),
             ],
-            home: HomePage(),
+            home: Register(),
             theme: AppTheme.theme,
             debugShowCheckedModeBanner: false,
           );

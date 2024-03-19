@@ -62,32 +62,53 @@ class _signUpState extends State<signUp> {
               SizedBox(
                 height: 20,
               ),
-              CustomTextFormField(
-                textEditingController: email,
-                borderColor: AppColor.darkgrey,
-                hinttext: "Enter your email",
-                labeltext: "Email",
-                obscuretext: false,
+              Column(
+                children: [
+                  Container(
+                      alignment: Alignment.topLeft,
+                      child: CustomText(
+                          text: "Email",
+                          color: AppColor.kGreenColor,
+                          fontsize: fontSize1)),
+                  CustomTextFormField(
+                    textEditingController: email,
+                    hintTextStyle: TextStyle(fontSize: fontSize1),
+                  ),
+                ],
               ),
               SizedBox(
-                height: 30,
+                height: 20,
               ),
-              CustomTextFormField(
-                textEditingController: password,
-                borderColor: AppColor.darkgrey,
-                hinttext: "Enter your password",
-                labeltext: "Enter Password",
-                obscuretext: true,
+              Column(
+                children: [
+                  Container(
+                      alignment: Alignment.topLeft,
+                      child: CustomText(
+                          text: "Password",
+                          color: AppColor.kGreenColor,
+                          fontsize: fontSize1)),
+                  CustomTextFormField(
+                    textEditingController: password,
+                    hintTextStyle: TextStyle(fontSize: fontSize1),
+                  ),
+                ],
               ),
               SizedBox(
-                height: 30,
+                height: 20,
               ),
-              CustomTextFormField(
-                textEditingController: repassword,
-                borderColor: AppColor.darkgrey,
-                hinttext: "Enter password",
-                labeltext: "Confirm Password",
-                obscuretext: true,
+              Column(
+                children: [
+                  Container(
+                      alignment: Alignment.topLeft,
+                      child: CustomText(
+                          text: "Confirm Password",
+                          color: AppColor.kGreenColor,
+                          fontsize: fontSize1)),
+                  CustomTextFormField(
+                    textEditingController: repassword,
+                    hintTextStyle: TextStyle(fontSize: fontSize1),
+                  ),
+                ],
               ),
               SizedBox(
                 height: 20,

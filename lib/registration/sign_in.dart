@@ -5,6 +5,7 @@ import 'package:quick_order/constant/color.dart';
 import 'package:quick_order/custom/custom_widget.dart';
 import 'package:quick_order/registration/sign_in_with_google.dart';
 import 'package:quick_order/registration/sign_up%20.dart';
+import 'package:quick_order/textformfielddata.dart';
 
 class SignIn extends StatefulWidget {
   const SignIn({super.key});
@@ -35,6 +36,13 @@ class _SignInState extends State<SignIn> {
 
   TextEditingController email = TextEditingController();
   TextEditingController password = TextEditingController();
+
+  final GoogleSigning googleSignIn = GoogleSigning();
+
+  final List<TextFormFieldData> fields = [
+    TextFormFieldData(label: "Email", controller: TextEditingController()),
+    TextFormFieldData(label: "Password", controller: TextEditingController())
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -58,22 +66,29 @@ class _SignInState extends State<SignIn> {
               SizedBox(
                 height: 20,
               ),
-              CustomTextFormField(
-                textEditingController: email,
-                borderColor: AppColor.darkgrey,
-                hinttext: "Enter your email",
-                labeltext: "Email",
-                obscuretext: false,
-              ),
-              SizedBox(
-                height: 30,
-              ),
-              CustomTextFormField(
-                textEditingController: password,
-                borderColor: AppColor.darkgrey,
-                hinttext: "Enter your password",
-                labeltext: "Password",
-                obscuretext: true,
+              Column(
+                children: fields
+                    .map(
+                      (field) => Column(
+                        children: [
+                          Container(
+                            alignment: Alignment.topLeft,
+                            child: CustomText(
+                              text: field.label,
+                              color: AppColor.kGreenColor,
+                              fontsize: fontSize2,
+                            ),
+                          ),
+                          CustomTextFormField(
+                            textEditingController: field.controller,
+                          ),
+                          SizedBox(
+                            height: 20,
+                          ),
+                        ],
+                      ),
+                    )
+                    .toList(),
               ),
               SizedBox(
                 height: 10,
@@ -129,7 +144,7 @@ class _SignInState extends State<SignIn> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       CustomText(
-                          text: "Don't have an account? /  ",
+                          text: "Don't have an account? /",
                           color: AppColor.kGreenColor,
                           fontsize: fontSize1),
                       GestureDetector(
@@ -142,13 +157,14 @@ class _SignInState extends State<SignIn> {
                           child: Container(
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(10),
-                                color: AppColor.background,
+                                // color: AppColor.kOrangeColor,
                               ),
                               width: MediaQuery.of(context).size.width * 0.2,
                               height: MediaQuery.of(context).size.height * 0.04,
                               child: Center(
                                 child: CustomText(
                                     text: "SignUp",
+                                    textDecoration: TextDecoration.underline,
                                     color: AppColor.kGreenColor,
                                     fontsize: fontSize2),
                               )))
@@ -195,12 +211,7 @@ class _SignInState extends State<SignIn> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       GestureDetector(
-                          onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => MyWidget()));
-                          },
+                          onTap: () {},
                           child: Image.asset('assets/googlelogo.png')),
                       SizedBox(
                         width: 20,

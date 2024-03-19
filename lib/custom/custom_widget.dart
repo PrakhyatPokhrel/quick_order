@@ -15,7 +15,7 @@ class CustomSizedBox extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         height: 70,
-        width: 140,
+        width: 160,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(borderRadius),
         ),
@@ -23,12 +23,14 @@ class CustomSizedBox extends StatelessWidget {
             style: ElevatedButton.styleFrom(
                 backgroundColor: AppColor.kOrangeColor),
             onPressed: onTapCallback ?? () {},
-            child: Text(
-              text,
-              style: TextStyle(
-                  color: AppColor.black,
-                  fontSize: 20,
-                  fontWeight: FontWeight.w500),
+            child: Center(
+              child: Text(
+                text,
+                style: TextStyle(
+                    color: AppColor.black,
+                    fontSize: 20,
+                    fontWeight: FontWeight.w400),
+              ),
             )));
   }
 }
@@ -158,13 +160,15 @@ class CustomText extends StatelessWidget {
   final Color color;
   final double fontsize;
   final FontWeight? fontWeight;
+  final TextDecoration? textDecoration;
 
   const CustomText(
       {super.key,
       required this.text,
       required this.color,
       this.fontWeight,
-      required this.fontsize});
+      required this.fontsize,
+      this.textDecoration});
 
   @override
   Widget build(BuildContext context) {
@@ -173,6 +177,7 @@ class CustomText extends StatelessWidget {
       maxLines: 1,
       softWrap: false,
       style: TextStyle(
+          decoration: textDecoration,
           color: color,
           fontWeight: fontWeight ?? FontWeight.w100,
           fontSize: fontsize),
@@ -182,43 +187,52 @@ class CustomText extends StatelessWidget {
 
 class CustomTextFormField extends StatelessWidget {
   const CustomTextFormField({
-    super.key,
+    Key? key,
     required this.textEditingController,
     this.hinttext,
     this.labeltext,
     this.iconData,
-    required this.borderColor,
+    this.borderColor,
     this.obscuretext,
-  });
+    this.hintTextStyle,
+  }) : super(key: key);
 
   final TextEditingController textEditingController;
   final String? hinttext;
   final String? labeltext;
   final IconData? iconData;
-  final Color borderColor;
+  final Color? borderColor;
   final bool? obscuretext;
+  final TextStyle? hintTextStyle;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      // validator: (value){
-      //   // if(password.text.isNotEmpty&&password.text.contains(l)){ }
-      // },
       controller: textEditingController,
       textCapitalization: TextCapitalization.sentences,
+      style: TextStyle(color: AppColor.kGreenColor, fontSize: fontSize0),
       decoration: InputDecoration(
-        border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(
-              10,
-            ),
-            borderSide: BorderSide(color: borderColor)),
-        hintText: hinttext,
-        labelText: labeltext,
-        suffixIcon: GestureDetector(
-          onTap: () {},
-          child: Icon(iconData),
-        ),
-      ),
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(10),
+            borderSide: BorderSide(color: borderColor ?? AppColor.kGreenColor),
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(10),
+            borderSide: BorderSide(color: borderColor ?? AppColor.kOrangeColor),
+          ),
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(10),
+            borderSide: BorderSide(color: borderColor ?? AppColor.kGreenColor),
+          ),
+          hintText: hinttext,
+          labelText: labeltext,
+          suffixIcon: GestureDetector(
+            onTap: () {},
+            child: Icon(iconData),
+          ),
+          labelStyle:
+              TextStyle(color: AppColor.kGreenColor, fontSize: fontSize3),
+          hintStyle: TextStyle(color: AppColor.darkgrey)),
     );
   }
 }

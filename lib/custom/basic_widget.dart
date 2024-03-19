@@ -6,7 +6,8 @@ class CustomTextContainer extends StatelessWidget {
   final double? heightC;
   final double? widthC;
   final Color? color;
-  const CustomTextContainer({
+  const CustomTextContainer(
+    t, {
     super.key,
     required this.text,
     required this.heightC,

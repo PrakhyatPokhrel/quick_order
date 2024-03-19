@@ -9,6 +9,7 @@ double padding = 15.0;
 double sizedboxheight = 30.0;
 double sizedboxwidth = 10.0;
 double sizedboxwidthMid = 20.0;
+double fontSize0 = 14;
 double fontSize1 = 16;
 double fontSize2 = 18.0;
 double fontSize3 = 20.0;

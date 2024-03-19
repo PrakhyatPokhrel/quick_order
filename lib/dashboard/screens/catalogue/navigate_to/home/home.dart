@@ -362,27 +362,24 @@ class CustomChip extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.all(padding),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          CircleAvatar(
-            radius: 30,
-            backgroundColor: AppColor.white,
-            child: Icon(
-              icon,
-              color: AppColor.kGreenColor,
-            ),
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+        CircleAvatar(
+          radius: 30,
+          backgroundColor: AppColor.white,
+          child: Icon(
+            icon,
+            color: AppColor.kGreenColor,
           ),
-          SizedBox(height: 4.0),
-          Text(
-            text,
-            style: TextStyle(color: AppColor.kOrangeColor),
-          ),
-        ],
-      ),
+        ),
+        SizedBox(height: 4.0),
+        Text(
+          text,
+          style: TextStyle(color: AppColor.kOrangeColor),
+        ),
+      ],
     );
   }
 }
