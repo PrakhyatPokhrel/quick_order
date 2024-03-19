@@ -13,7 +13,7 @@ import 'package:quick_order/controller/language_change_controller.dart';
 import 'package:quick_order/dashboard/screens/catalogue/bloc/bloc/catalogue_bloc.dart';
 import 'package:quick_order/dashboard/screens/catalogue/navigate_to/home/bloc/bloc/home_bloc.dart';
 import 'package:quick_order/firebase_options.dart';
-import 'package:quick_order/role.dart';
+import 'package:quick_order/registration/sign_in.dart';
 import 'package:rxdart/rxdart.dart';
 
 final _messageStreamController = BehaviorSubject<RemoteMessage>();
@@ -118,7 +118,7 @@ class _MyAppState extends State<MyApp> {
               Locale('en'), // English
               Locale('ne'),
             ],
-            home: Register(),
+            home: SignIn(),
             theme: AppTheme.theme,
             debugShowCheckedModeBanner: false,
           );

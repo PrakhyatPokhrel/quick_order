@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:quick_order/constant/apptheme.dart';
 import 'package:quick_order/constant/color.dart';
 import 'package:quick_order/custom/custom_widget.dart';
+import 'package:quick_order/dashboard/screens/catalogue/catalogue.dart';
 import 'package:quick_order/registration/sign_in_with_google.dart';
 import 'package:quick_order/registration/sign_up%20.dart';
 import 'package:quick_order/textformfielddata.dart';
@@ -118,7 +119,8 @@ class _SignInState extends State<SignIn> {
               GestureDetector(
                 onTap: () {
                   signUpWithEmailAndPassword();
-                  print("success");
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: ((context) => Catalogue())));
                 },
                 child: Container(
                     height: MediaQuery.of(context).size.height * 0.06,
@@ -221,7 +223,7 @@ class _SignInState extends State<SignIn> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => signUp()));
+                                  builder: (context) => GoogleSigning()));
                         },
                         child: Icon(
                           Icons.facebook,
