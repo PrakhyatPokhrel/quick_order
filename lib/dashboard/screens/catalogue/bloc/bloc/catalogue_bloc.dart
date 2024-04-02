@@ -18,7 +18,7 @@ class CatalogueBloc extends Bloc<CatalogueEvent, CatalogueState> {
     try {
       final response = await http.get(
         Uri.parse(
-          "http://192.168.1.92:8000/api/catalogue",
+          "http://192.168.1.88:8000/api/catalogs",
         ),
       );
 

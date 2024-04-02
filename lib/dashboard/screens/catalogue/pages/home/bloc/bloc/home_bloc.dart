@@ -2,9 +2,9 @@ import 'dart:convert';
 
 import 'package:bloc/bloc.dart';
 import 'package:http/http.dart' as http;
-import 'package:quick_order/dashboard/screens/catalogue/navigate_to/home/bloc/bloc/home_event.dart';
-import 'package:quick_order/dashboard/screens/catalogue/navigate_to/home/bloc/bloc/home_state.dart';
-import 'package:quick_order/dashboard/screens/catalogue/navigate_to/home/model/fakestore_product.dart';
+import 'package:quick_order/dashboard/screens/catalogue/pages/home/bloc/bloc/home_event.dart';
+import 'package:quick_order/dashboard/screens/catalogue/pages/home/bloc/bloc/home_state.dart';
+import 'package:quick_order/dashboard/screens/catalogue/pages/home/model/fakestore_product.dart';
 
 class HomeProductBloc extends Bloc<HomeProductEvent, HomeProductState> {
   List<Product> receiveCartProduct = [];

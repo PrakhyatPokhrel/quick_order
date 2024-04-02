@@ -1,4 +1,4 @@
-import 'package:quick_order/dashboard/screens/catalogue/navigate_to/home/model/fakestore_product.dart';
+import 'package:quick_order/dashboard/screens/catalogue/pages/home/model/fakestore_product.dart';
 
 abstract class HomeProductState {}
 

@@ -1,6 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:quick_order/dashboard/screens/catalogue/navigate_to/favourites/bloc/bloc/favourites_event.dart';
-import 'package:quick_order/dashboard/screens/catalogue/navigate_to/favourites/bloc/bloc/favourites_state.dart';
+import 'package:quick_order/dashboard/screens/catalogue/pages/favourites/bloc/bloc/favourites_event.dart';
+import 'package:quick_order/dashboard/screens/catalogue/pages/favourites/bloc/bloc/favourites_state.dart';
 
 class FavouritesBloc extends Bloc<FavouritesEvent, FavouritesState> {
   FavouritesBloc() : super(InitialFavouritesState()) {

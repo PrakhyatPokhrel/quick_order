@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:quick_order/constant/apptheme.dart';
 import 'package:quick_order/constant/color.dart';
-import 'package:quick_order/dashboard/screens/catalogue/navigate_to/home/bloc/bloc/home_bloc.dart';
-import 'package:quick_order/dashboard/screens/catalogue/navigate_to/payement_page.dart';
+import 'package:quick_order/custom/custom_widget.dart';
+import 'package:quick_order/dashboard/screens/catalogue/pages/home/bloc/bloc/home_bloc.dart';
+import 'package:quick_order/dashboard/screens/catalogue/pages/payement_page.dart';
 
 class Cart extends StatefulWidget {
   const Cart({super.key});
@@ -19,8 +21,13 @@ class _CartState extends State<Cart> {
         color: AppColor.background,
         child: (context.read<HomeProductBloc>().receiveCartProduct.isEmpty)
             ? Container(
-                child: Text("Your cart is empty."),
-              )
+                decoration: BoxDecoration(color: AppColor.white),
+                child: Center(
+                  child: CustomText(
+                      text: "Your cart is empty.",
+                      color: AppColor.kOrangeColor,
+                      fontsize: fontSize1),
+                ))
             : Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quick_order/constant/color.dart';
-import 'package:quick_order/dashboard/screens/catalogue/navigate_to/home/bloc/bloc/home_bloc.dart';
+import 'package:quick_order/dashboard/screens/catalogue/pages/home/bloc/bloc/home_bloc.dart';
 
 class Favourite extends StatefulWidget {
   const Favourite({super.key});

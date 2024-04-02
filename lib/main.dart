@@ -11,7 +11,7 @@ import 'package:provider/provider.dart';
 import 'package:quick_order/constant/apptheme.dart';
 import 'package:quick_order/controller/language_change_controller.dart';
 import 'package:quick_order/dashboard/screens/catalogue/bloc/bloc/catalogue_bloc.dart';
-import 'package:quick_order/dashboard/screens/catalogue/navigate_to/home/bloc/bloc/home_bloc.dart';
+import 'package:quick_order/dashboard/screens/catalogue/pages/home/bloc/bloc/home_bloc.dart';
 import 'package:quick_order/firebase_options.dart';
 import 'package:quick_order/registration/sign_in.dart';
 import 'package:rxdart/rxdart.dart';
@@ -115,10 +115,10 @@ class _MyAppState extends State<MyApp> {
               KhaltiLocalizations.delegate
             ],
             supportedLocales: [
-              Locale('en'), // English
-              Locale('ne'),
+              const Locale('en'), // English
+              const Locale('ne'),
             ],
-            home: SignIn(),
+            home: const SignIn(),
             theme: AppTheme.theme,
             debugShowCheckedModeBanner: false,
           );

@@ -4,10 +4,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quick_order/constant/apptheme.dart';
 import 'package:quick_order/constant/color.dart';
 import 'package:quick_order/custom/custom_widget.dart';
-import 'package:quick_order/dashboard/screens/catalogue/navigate_to/home/bloc/bloc/home_bloc.dart';
-import 'package:quick_order/dashboard/screens/catalogue/navigate_to/home/bloc/bloc/home_event.dart';
-import 'package:quick_order/dashboard/screens/catalogue/navigate_to/home/bloc/bloc/home_state.dart';
-import 'package:quick_order/dashboard/screens/catalogue/navigate_to/item_description.dart';
+import 'package:quick_order/dashboard/screens/catalogue/pages/home/bloc/bloc/home_bloc.dart';
+import 'package:quick_order/dashboard/screens/catalogue/pages/home/bloc/bloc/home_event.dart';
+import 'package:quick_order/dashboard/screens/catalogue/pages/home/bloc/bloc/home_state.dart';
+import 'package:quick_order/dashboard/screens/catalogue/pages/item_description.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -50,6 +50,7 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             Container(
+              alignment: Alignment.centerLeft,
               height: MediaQuery.of(context).size.height * 0.72,
               width: double.infinity,
               child: ContainedTabBarView(
@@ -64,27 +65,27 @@ class _HomePageState extends State<HomePage> {
                   }
                 },
                 tabs: [
-                  CustomChip(
+                  const CustomChip(
                     text: "Bed",
                     icon: Icons.bed_outlined,
                   ),
-                  CustomChip(
+                  const CustomChip(
                     text: "Sofa",
                     icon: Icons.chair,
                   ),
-                  CustomChip(
+                  const CustomChip(
                     text: "Chair",
                     icon: Icons.chair_alt_outlined,
                   ),
-                  CustomChip(
+                  const CustomChip(
                     text: "Table",
                     icon: Icons.table_bar_outlined,
                   ),
-                  CustomChip(
+                  const CustomChip(
                     text: "Door",
                     icon: Icons.door_back_door,
                   ),
-                  CustomChip(
+                  const CustomChip(
                     text: "Door",
                     icon: Icons.door_back_door,
                   ),
@@ -103,9 +104,9 @@ class _HomePageState extends State<HomePage> {
                       if (state is LoadingHomeProductState) {
                         return Container(
                           height: 20,
-                          width: 100,
+                          // width: 80,
                           alignment: Alignment.center,
-                          child: CircularProgressIndicator(
+                          child: const CircularProgressIndicator(
                             strokeWidth: 1,
                           ),
                         );
@@ -114,14 +115,14 @@ class _HomePageState extends State<HomePage> {
                         return Container(
                             child: SingleChildScrollView(
                                 child: Padding(
-                          padding: EdgeInsets.fromLTRB(4, 4, 4, 4),
+                          padding: const EdgeInsets.fromLTRB(4, 4, 4, 4),
                           child: Container(
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(20)),
                             height: MediaQuery.of(context).size.height * 0.58,
                             child: GridView.builder(
                               gridDelegate:
-                                  SliverGridDelegateWithFixedCrossAxisCount(
+                                  const SliverGridDelegateWithFixedCrossAxisCount(
                                 crossAxisCount: 2,
                                 crossAxisSpacing: 2.0,
                                 mainAxisSpacing: 6.0,
@@ -132,6 +133,8 @@ class _HomePageState extends State<HomePage> {
                                   color: AppColor.grey[200],
                                   child: Column(
                                     mainAxisAlignment: MainAxisAlignment.start,
+                                    // crossAxisAlignment:
+                                    //     CrossAxisAlignment.stretch,
                                     children: [
                                       GestureDetector(
                                         onTap: () {
@@ -213,7 +216,7 @@ class _HomePageState extends State<HomePage> {
                         height: 20,
                         width: 100,
                         alignment: Alignment.center,
-                        child: CircularProgressIndicator(
+                        child: const CircularProgressIndicator(
                           strokeWidth: 1,
                         ),
                       );
@@ -324,19 +327,19 @@ class _HomePageState extends State<HomePage> {
                   //   },
                   // ),
                   Container(
-                    child: CustomSingleChildGridView(),
+                    child: const CustomSingleChildGridView(),
                   ),
                   Container(
-                    child: CustomSingleChildGridView(),
+                    child: const CustomSingleChildGridView(),
                   ),
                   Container(
-                    child: CustomSingleChildGridView(),
+                    child: const CustomSingleChildGridView(),
                   ),
                   Container(
-                    child: CustomSingleChildGridView(),
+                    child: const CustomSingleChildGridView(),
                   ),
                   Container(
-                    child: CustomSingleChildGridView(),
+                    child: const CustomSingleChildGridView(),
                   ),
                 ],
               ),
@@ -351,33 +354,31 @@ class _HomePageState extends State<HomePage> {
 class CustomChip extends StatelessWidget {
   final String text;
   final IconData icon;
-  final double padding;
 
   const CustomChip({
     Key? key,
     required this.text,
     required this.icon,
-    this.padding = 15.0, // Default padding value
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Column(
-      mainAxisSize: MainAxisSize.min,
+      // mainAxisSize: MainAxisSize.min,
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
         CircleAvatar(
-          radius: 30,
+          radius: 40,
           backgroundColor: AppColor.white,
           child: Icon(
             icon,
             color: AppColor.kGreenColor,
           ),
         ),
-        SizedBox(height: 4.0),
+        const SizedBox(height: 4.0),
         Text(
           text,
-          style: TextStyle(color: AppColor.kOrangeColor),
+          style: const TextStyle(color: AppColor.kOrangeColor),
         ),
       ],
     );
@@ -393,12 +394,12 @@ class CustomSingleChildGridView extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
         child: Padding(
-      padding: EdgeInsets.fromLTRB(4, 4, 4, 4),
+      padding: const EdgeInsets.fromLTRB(4, 4, 4, 4),
       child: Container(
         decoration: BoxDecoration(borderRadius: BorderRadius.circular(20)),
         height: MediaQuery.of(context).size.height * 0.58,
         child: GridView.builder(
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
             crossAxisSpacing: 2.0,
             mainAxisSpacing: 6.0,
@@ -420,7 +421,7 @@ class CustomSingleChildGridView extends StatelessWidget {
                     child: Container(
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20)),
-                      child: Image(
+                      child: const Image(
                           fit: BoxFit.cover,
                           image: NetworkImage(
                               "https://th.bing.com/th?id=OIP.phL1-kuxdG9wXnVb_9fn_wHaE5&w=307&h=203&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2")),
@@ -443,7 +444,7 @@ class CustomSingleChildGridView extends StatelessWidget {
                             text: "Price",
                             color: AppColor.grey,
                             fontsize: fontSize1),
-                        Icon(Icons.favorite_outline_rounded)
+                        const Icon(Icons.favorite_outline_rounded)
                       ],
                     ),
                   )

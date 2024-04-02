@@ -14,6 +14,7 @@ class signUp extends StatefulWidget {
 }
 
 class _signUpState extends State<signUp> {
+  bool agreeToTerms = false;
   Future<void> signUpWithEmailAndPassword() async {
     try {
       final credential =
@@ -115,7 +116,14 @@ class _signUpState extends State<signUp> {
               ),
               Row(
                 children: [
-                  Checkbox(value: false, onChanged: (onChanged) {}),
+                  Checkbox(
+                      activeColor: AppColor.kOrangeColor,
+                      value: agreeToTerms,
+                      onChanged: (value) {
+                        setState(() {
+                          agreeToTerms = value ?? true;
+                        });
+                      }),
                   CustomText(
                       text: "I agree to terms and conditions",
                       color: AppColor.darkgrey,

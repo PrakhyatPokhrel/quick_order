@@ -9,24 +9,24 @@ Catalogue catalogueFromJson(String str) => Catalogue.fromJson(json.decode(str));
 String catalogueToJson(Catalogue data) => json.encode(data.toJson());
 
 class Catalogue {
-  bool status;
+  bool success;
   List<Datum> data;
   String message;
 
   Catalogue({
-    required this.status,
+    required this.success,
     required this.data,
     required this.message,
   });
 
   factory Catalogue.fromJson(Map<String, dynamic> json) => Catalogue(
-        status: json["status"],
+        success: json["success"],
         data: List<Datum>.from(json["data"].map((x) => Datum.fromJson(x))),
         message: json["message"],
       );
 
   Map<String, dynamic> toJson() => {
-        "status": status,
+        "success": success,
         "data": List<dynamic>.from(data.map((x) => x.toJson())),
         "message": message,
       };
@@ -35,27 +35,27 @@ class Catalogue {
 class Datum {
   int id;
   String name;
-  String photo;
-  String photoUrl;
+  String image;
+  String imageUrl;
 
   Datum({
     required this.id,
     required this.name,
-    required this.photo,
-    required this.photoUrl,
+    required this.image,
+    required this.imageUrl,
   });
 
   factory Datum.fromJson(Map<String, dynamic> json) => Datum(
         id: json["id"],
         name: json["name"],
-        photo: json["photo"],
-        photoUrl: json["photo_url"],
+        image: json["image"],
+        imageUrl: json["image_url"],
       );
 
   Map<String, dynamic> toJson() => {
         "id": id,
         "name": name,
-        "photo": photo,
-        "photo_url": photoUrl,
+        "image": image,
+        "image_url": imageUrl,
       };
 }

@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:quick_order/constant/apptheme.dart';
 import 'package:quick_order/constant/color.dart';
-import 'package:quick_order/dashboard/screens/catalogue/navigate_to/cart/cart.dart';
-import 'package:quick_order/dashboard/screens/catalogue/navigate_to/favourites/favourite.dart';
-import 'package:quick_order/dashboard/screens/catalogue/navigate_to/home/home.dart';
-import 'package:quick_order/dashboard/screens/catalogue/navigate_to/notifications.dart';
+import 'package:quick_order/custom/custom_widget.dart';
+import 'package:quick_order/dashboard/screens/catalogue/pages/cart/cart.dart';
+import 'package:quick_order/dashboard/screens/catalogue/pages/favourites/favourite.dart';
+import 'package:quick_order/dashboard/screens/catalogue/pages/home/home.dart';
+import 'package:quick_order/dashboard/screens/catalogue/pages/notifications.dart';
+import 'package:quick_order/registration/manufacturer_register.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 
 class Catalogue extends StatefulWidget {
@@ -21,6 +23,49 @@ class _CatalogueState extends State<Catalogue> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Drawer(
+        backgroundColor: AppColor.background,
+        child: Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: ListView(
+            children: [
+              // DrawerHeader(child: ),
+              ListTile(
+                  leading: Icon(Icons.person),
+                  title: CustomText(
+                      text: "Profile",
+                      color: AppColor.darkgrey,
+                      fontsize: fontSize2)),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: ((context) => ManufacturerRegister())));
+                },
+                child: ListTile(
+                    leading: Icon(Icons.app_registration_rounded),
+                    title: CustomText(
+                        text: "Register Company",
+                        color: AppColor.darkgrey,
+                        fontsize: fontSize2)),
+              ),
+              ListTile(
+                  leading: Icon(Icons.settings),
+                  title: CustomText(
+                      text: "Settings",
+                      color: AppColor.darkgrey,
+                      fontsize: fontSize2)),
+              ListTile(
+                  leading: Icon(Icons.logout),
+                  title: CustomText(
+                      text: "Logout",
+                      color: AppColor.darkgrey,
+                      fontsize: fontSize2))
+            ],
+          ),
+        ),
+      ),
       backgroundColor: AppColor.kGreenColor,
       appBar: AppBars(),
       body: navlist[selectedindex],
@@ -71,6 +116,7 @@ class AppBars extends StatelessWidget implements PreferredSize {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      automaticallyImplyLeading: false,
       backgroundColor: AppColor.kGreenColor,
       actions: [
         Container(
@@ -95,25 +141,40 @@ class SearchBar extends StatelessWidget {
   SearchBar({super.key});
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 40,
-      width: 340,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20),
-        color: Colors.grey[300],
-      ),
-      child: TextFormField(
-        textCapitalization: TextCapitalization.sentences,
-        controller: searchText,
-        decoration: InputDecoration(
-            hintText: 'Search',
-            // contentPadding: EdgeInsets.symmetric(horizontal: 30),
-            border: InputBorder.none,
-            icon: Padding(
-              padding: EdgeInsets.fromLTRB(padding, padding, 0, padding),
-              child: Icon(Icons.search),
-            )),
-      ),
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+        Builder(
+          builder: (BuildContext context) {
+            return IconButton(
+              icon: CircleAvatar(child: const Icon(Icons.person)),
+              onPressed: () {
+                Scaffold.of(context).openDrawer();
+              },
+              tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
+            );
+          },
+        ),
+        Container(
+          height: 40,
+          width: 315,
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20),
+              color: AppColor.background),
+          child: TextFormField(
+            textCapitalization: TextCapitalization.sentences,
+            controller: searchText,
+            decoration: InputDecoration(
+                hintText: 'Search',
+                // contentPadding: EdgeInsets.symmetric(horizontal: 30),
+                border: InputBorder.none,
+                icon: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Icon(Icons.search),
+                )),
+          ),
+        ),
+      ],
     );
   }
 }

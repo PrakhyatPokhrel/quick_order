@@ -25,9 +25,9 @@ class _VendorRegisterState extends State<VendorRegister> {
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
-          margin: EdgeInsets.all(20),
+          margin: const EdgeInsets.all(20),
           child: Column(children: [
-            SizedBox(
+            const SizedBox(
               height: 100,
             ),
             Column(

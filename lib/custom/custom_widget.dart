@@ -209,6 +209,9 @@ class CustomTextFormField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       controller: textEditingController,
+      // validator: ((value) {
+      //   return
+      // },),
       textCapitalization: TextCapitalization.sentences,
       style: TextStyle(color: AppColor.kGreenColor, fontSize: fontSize0),
       decoration: InputDecoration(

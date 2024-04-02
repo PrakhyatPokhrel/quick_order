@@ -3,11 +3,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quick_order/constant/apptheme.dart';
 import 'package:quick_order/constant/color.dart';
 import 'package:quick_order/custom/custom_widget.dart';
-import 'package:quick_order/dashboard/screens/catalogue/navigate_to/cart/cart.dart';
-import 'package:quick_order/dashboard/screens/catalogue/navigate_to/favourites/favourite.dart';
-import 'package:quick_order/dashboard/screens/catalogue/navigate_to/home/bloc/bloc/home_bloc.dart';
-import 'package:quick_order/dashboard/screens/catalogue/navigate_to/home/bloc/bloc/home_event.dart';
-import 'package:quick_order/dashboard/screens/catalogue/navigate_to/home/model/fakestore_product.dart';
+import 'package:quick_order/dashboard/screens/catalogue/pages/cart/cart.dart';
+import 'package:quick_order/dashboard/screens/catalogue/pages/favourites/favourite.dart';
+import 'package:quick_order/dashboard/screens/catalogue/pages/home/bloc/bloc/home_bloc.dart';
+import 'package:quick_order/dashboard/screens/catalogue/pages/home/bloc/bloc/home_event.dart';
+import 'package:quick_order/dashboard/screens/catalogue/pages/home/model/fakestore_product.dart';
 
 class ItemDescription extends StatefulWidget {
   Product clickedProduct;
@@ -65,12 +65,12 @@ class _ItemDescriptionState extends State<ItemDescription> {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => Cart()));
+                                        builder: (context) => const Cart()));
                               },
                               child: Padding(
                                 padding:
                                     EdgeInsets.fromLTRB(padding, 0, padding, 0),
-                                child: Icon(Icons.shopping_cart),
+                                child: const Icon(Icons.shopping_cart),
                               )),
                           Padding(
                             padding:
@@ -83,9 +83,9 @@ class _ItemDescriptionState extends State<ItemDescription> {
                                   Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                          builder: (context) => Favourite()));
+                                          builder: (context) => const Favourite()));
                                 },
-                                child: Icon(Icons.favorite_outline_outlined)),
+                                child: const Icon(Icons.favorite_outline_outlined)),
                           ),
                         ],
                       ),

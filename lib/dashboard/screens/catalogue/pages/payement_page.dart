@@ -22,7 +22,7 @@ class _PayementPageState extends State<PayementPage> {
       body: Container(
         alignment: Alignment.topCenter,
         child: Column(children: [
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           GestureDetector(
@@ -34,11 +34,11 @@ class _PayementPageState extends State<PayementPage> {
               alignment: Alignment.topCenter,
               height: 50,
               width: 200,
-              decoration: BoxDecoration(color: AppColor.kOrangeColor),
-              child: Center(child: Text("Esewa")),
+              decoration: const BoxDecoration(color: AppColor.kOrangeColor),
+              child: const Center(child: Text("Esewa")),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           GestureDetector(
@@ -70,11 +70,11 @@ class _PayementPageState extends State<PayementPage> {
               alignment: Alignment.topCenter,
               height: 50,
               width: 200,
-              decoration: BoxDecoration(color: AppColor.kOrangeColor),
-              child: Center(child: Text("Khalti")),
+              decoration: const BoxDecoration(color: AppColor.kOrangeColor),
+              child: const Center(child: Text("Khalti")),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           GestureDetector(
@@ -83,8 +83,8 @@ class _PayementPageState extends State<PayementPage> {
               alignment: Alignment.topCenter,
               height: 50,
               width: 200,
-              decoration: BoxDecoration(color: AppColor.kOrangeColor),
-              child: Center(child: Text("COD")),
+              decoration: const BoxDecoration(color: AppColor.kOrangeColor),
+              child: const Center(child: Text("COD")),
             ),
           ),
         ]),
